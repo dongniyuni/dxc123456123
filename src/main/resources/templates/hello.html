@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>学生姓名：</label>
+                            <input type="text" name="studentName"/>
+                        </li>
+                        <li>
+                            <label>学号：</label>
+                            <input type="text" name="studentNum"/>
+                        </li>
+                        <li>
+                            <label>年龄：</label>
+                            <input type="text" name="studentAge"/>
+                        </li>
+                        <li>
+                            <label>性别：</label>
+                            <select name="studentSex">
+                                <option value="">所有</option>
+                                <option value="-1">代码生成请选择字典属性</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>生日：</label>
+                            <input type="text" class="time-input" placeholder="请选择生日" name="studentBirthday"/>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="btn-group-sm" id="toolbar" role="group">
+    <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="develop':'student':'add">
+        <i class="fa fa-plus"></i> 添加
+    </a>
+    <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="develop':'student':'edit">
+        <i class="fa fa-edit"></i> 修改
+    </a>
+    <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="develop':'student':'remove">
+        <i class="fa fa-remove"></i> 删除
+    </a>
+    <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="develop':'student':'export">
+        <i class="fa fa-download"></i> 导出
+    </a>
+</div>
+</body>
+</html>
